@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U.E. La Primera - Actividades</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f5fff7;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /*======================*/
+        /* NAVBAR */
+        /*======================*/
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: rgba(12, 95, 43, .85);
+            backdrop-filter: blur(18px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, .25);
+        }
+
+        nav {
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+        }
+
+        .logo i {
+            font-size: 34px;
+            color: #9dffb5;
+        }
+
+        .logo h2 {
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-weight: 500;
+            transition: .4s;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: #b8ffd0;
+        }
+
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: #b8ffd0;
+            transition: .4s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /*======================*/
+        /* SECCIÓN PRINCIPAL */
+        /*======================*/
+        .principal {
+            padding: 140px 6% 80px;
+            background: linear-gradient(to bottom, #ffffff, #eefdf3);
+            min-height: 100vh;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        /* Inclusión de Azul Marino en el Título Principal */
+        .titulo h2 {
+            font-size: 50px;
+            color: #0a2540;
+            font-weight: 800;
+        }
+
+        .linea {
+            width: 130px;
+            height: 6px;
+            background: #1db954;
+            margin: 18px auto;
+            border-radius: 20px;
+        }
+
+        .subtitulo {
+            font-size: 20px;
+            color: #555;
+            margin-top: 20px;
+        }
+
+        /*======================*/
+        /* GRID DE ACTIVIDADES */
+        /*======================*/
+        .grid-actividades {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tarjeta-actividad {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
+            transition: .4s;
+            border-top: 6px solid #0a2540; /* Alternado con Azul Marino */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tarjeta-actividad:nth-child(even) {
+            border-top: 6px solid #19a84a; /* Mantiene la consistencia verde */
+        }
+
+        .tarjeta-actividad:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, .18);
+        }
+
+        /* Contenedor de la Imagen con Efecto Hover */
+        .capa-imagen {
+            position: relative;
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+            background: #eefdf3;
+        }
+
+        .capa-imagen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        /* Información emergente al pasar el mouse */
+        .info-hover {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 37, 64, 0.9); /* Fondo Azul Marino Semitransparente */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            text-align: center;
+            color: white;
+            transition: .4s ease-in-out;
+        }
+
+        .info-hover p {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .info-hover .fecha {
+            font-size: 14px;
+            font-weight: bold;
+            background: #1db954;
+            padding: 6px 15px;
+            border-radius: 20px;
+        }
+
+        /* Activación del Hover */
+        .tarjeta-actividad:hover .info-hover {
+            top: 0;
+        }
+
+        .tarjeta-actividad:hover .capa-imagen img {
+            transform: scale(1.1);
+        }
+
+        /* Pie de la tarjeta (Título visible siempre) */
+        .pie-tarjeta {
+            padding: 20px;
+            text-align: center;
+            background: white;
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pie-tarjeta h3 {
+            font-size: 20px;
+            color: #0c6b35;
+            font-weight: 700;
+        }
+
+        /*======================*/
+        /* FOOTER */
+        /*======================*/
+        footer {
+            background: #0d5d2d;
+            padding: 40px;
+            text-align: center;
+            color: white;
+            margin-top: 90px;
+        }
+
+        footer h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            opacity: .9;
+        }
+
+        /*======================*/
+        /* RESPONSIVE */
+        /*======================*/
+        @media(max-width:900px) {
+            nav {
+                flex-direction: column;
+                height: auto;
+                padding: 20px 0;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-top: 15px;
+                gap: 18px;
+            }
+
+            .titulo h2 {
+                font-size: 38px;
+            }
+
+            .grid-actividades {
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                gap: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fa-solid fa-school"></i>
+                <h2>Unidad Educativa</h2>
+            </div>
+            <ul>
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="Colegio.html">UNIDAD EDUCATIVA</a></li>
+                <li><a href="panel informativo.html">PANEL INFORMATIVO</a></li>
+                <li><a href="Actividades.html">ACTIVIDADES</a></li>
+                <li><a href="consultas a padres.html">CONSULTAS A PROFESORES</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="principal">
+        <div class="titulo">
+            <h2>ACTIVIDADES</h2>
+            <div class="linea"></div>
+            <p class="subtitulo">Descubre los momentos más destacados y eventos de nuestra comunidad estudiantil.</p>
+        </div>
+
+        <div class="grid-actividades">
+
+            <div class="tarjeta-actividad">
+                <div class="capa-imagen">
+                    <img src="campeonato.jpg" alt="Mini Campeonato">
+                    <div class="info-hover">
+                        <p>Estudiantes de secundaria compitiendo con gran entusiasmo y deportividad en las finales anuales de futsal.</p>
+                        <span class="fecha"><i class="fa-regular fa-calendar-days"></i> 14 Mayo, 2026</span>
+                    </div>
+                </div>
+                <div class="pie-tarjeta">
+                    <h3>Mini Campeonato Intercurso</h3>
+                </div>
+            </div>
+
+            <div class="tarjeta-actividad">
+                <div class="capa-imagen">
+                    <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=800" alt="Concurso de Danza">
+                    <div class="info-hover">
+                        <p>Presentación de danzas folclóricas tradicionales rescatando la cultura y el talento coreográfico del colegio.</p>
+                        <span class="fecha"><i class="fa-regular fa-calendar-days"></i> 22 Mayo, 2026</span>
+                    </div>
+                </div>
+                <div class="pie-tarjeta">
+                    <h3>Concurso de Danza Folclórica</h3>
+                </div>
+            </div>
+
+            <div class="tarjeta-actividad">
+                <div class="capa-imagen">
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800" alt="Feria de Ciencias">
+                    <div class="info-hover">
+                        <p>Exposición de proyectos científicos innovadores realizados por alumnos de los últimos años de bachillerato.</p>
+                        <span class="fecha"><i class="fa-regular fa-calendar-days"></i> 05 Junio, 2026</span>
+                    </div>
+                </div>
+                <div class="pie-tarjeta">
+                    <h3>Feria Científica y Tecnológica</h3>
+                </div>
+            </div>
+
+            <div class="tarjeta-actividad">
+                <div class="capa-imagen">
+                    <img src="dibujo.jpg" alt="Concurso de Dibujo">
+                    <div class="info-hover">
+                        <p>Espacio artístico donde los pequeños plasmaron su creatividad bajo el lema "Cuidemos nuestro planeta".</p>
+                        <span class="fecha"><i class="fa-regular fa-calendar-days"></i> 12 Abril, 2026</span>
+                    </div>
+                </div>
+                <div class="pie-tarjeta">
+                    <h3>Concurso de Dibujo y Pintura</h3>
+                </div>
+            </div>
+
+            <div class="tarjeta-actividad">
+                <div class="capa-imagen">
+                    <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?q=80&w=800" alt="Banda de Guerra">
+                    <div class="info-hover">
+                        <p>Ensayo general de nuestra banda escolar preparándose con disciplina para los desfiles patrios.</p>
+                        <span class="fecha"><i class="fa-regular fa-calendar-days"></i> 19 Junio, 2026</span>
+                    </div>
+                </div>
+                <div class="pie-tarjeta">
+                    <h3>Ensayos de la Banda Escolar</h3>
+                </div>
+            </div>
+
+            <div class="tarjeta-actividad">
+                <div class="capa-imagen">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800" alt="Día del Estudiante">
+                    <div class="info-hover">
+                        <p>Una jornada llena de risas, juegos interactivos y números compartidos dedicados a agasajar a nuestros alumnos.</p>
+                        <span class="fecha"><i class="fa-regular fa-calendar-days"></i> 21 Septiembre, 2025</span>
+                    </div>
+                </div>
+                <div class="pie-tarjeta">
+                    <h3>Celebración del Día del Estudiante</h3>
+                </div>
+            </div>
+
+            <div class="tarjeta-actividad">
+                <div class="capa-imagen">
+                    <img src="graduacion.jpg" alt="Acto de Graduación">
+                    <div class="info-hover">
+                        <p>Solemne acto de graduación de la promoción saliente, celebrando el éxito de una etapa cumplida con creces.</p>
+                        <span class="fecha"><i class="fa-regular fa-calendar-days"></i> 12 Diciembre, 2025</span>
+                    </div>
+                </div>
+                <div class="pie-tarjeta">
+                    <h3>Solemne Acto de Graduación</h3>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <h3>U.E. LA PRIMERA</h3>
+        <p>"Educar con valores, construir el futuro."</p>
+        <br>
+        <p>© 2026 Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
