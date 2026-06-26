@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Unidad Educativa</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+
+background:#f5fff7;
+overflow-x:hidden;
+
+}
+
+a{
+
+text-decoration:none;
+
+}
+
+ul{
+
+list-style:none;
+
+}
+
+/*======================*/
+/* NAVBAR */
+/*======================*/
+
+header{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:80px;
+
+background:rgba(12,95,43,.85);
+
+backdrop-filter:blur(18px);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:1000;
+
+box-shadow:0 5px 20px rgba(0,0,0,.25);
+
+}
+
+nav{
+
+width:90%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+color:white;
+
+}
+
+.logo i{
+
+font-size:34px;
+
+color:#9dffb5;
+
+}
+
+.logo h2{
+
+font-size:30px;
+
+font-weight:700;
+
+}
+
+nav ul{
+
+display:flex;
+
+gap:30px;
+
+}
+
+nav ul li a{
+
+color:white;
+
+font-weight:500;
+
+transition:.4s;
+
+position:relative;
+
+}
+
+nav ul li a:hover{
+
+color:#b8ffd0;
+
+}
+
+nav ul li a::after{
+
+content:"";
+
+position:absolute;
+
+bottom:-6px;
+
+left:0;
+
+width:0;
+
+height:3px;
+
+background:#b8ffd0;
+
+transition:.4s;
+
+}
+
+nav ul li a:hover::after{
+
+width:100%;
+
+}
+
+/*======================*/
+/* HERO */
+/*======================*/
+
+.hero{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+position:relative;
+
+overflow:hidden;
+
+background:
+
+linear-gradient(135deg,
+
+#0d5d2d,
+
+#159548,
+
+#34d16c,
+
+#ffffff);
+
+}
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:700px;
+
+height:700px;
+
+background:rgba(255,255,255,.08);
+
+border-radius:50%;
+
+top:-200px;
+
+left:-180px;
+
+}
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+width:500px;
+
+height:500px;
+
+background:rgba(255,255,255,.12);
+
+border-radius:50%;
+
+right:-120px;
+
+bottom:-150px;
+
+}
+
+.hero-box{
+
+position:relative;
+
+z-index:5;
+
+width:850px;
+
+padding:60px;
+
+background:rgba(255,255,255,.16);
+
+backdrop-filter:blur(18px);
+
+border-radius:35px;
+
+border:1px solid rgba(255,255,255,.35);
+
+box-shadow:0 20px 45px rgba(0,0,0,.25);
+
+animation:entrada 1.2s;
+
+}
+
+.hero-box h3{
+
+color:white;
+
+font-size:28px;
+
+letter-spacing:5px;
+
+margin-bottom:15px;
+
+}
+
+.hero-box h1{
+
+font-size:82px;
+
+font-weight:800;
+
+color:white;
+
+line-height:1.1;
+
+margin-bottom:25px;
+
+}
+
+.hero-box p{
+
+font-size:22px;
+
+color:white;
+
+line-height:1.8;
+
+margin-bottom:45px;
+
+}
+
+.boton{
+
+display:inline-block;
+
+padding:18px 45px;
+
+background:white;
+
+color:#0f6d37;
+
+border-radius:50px;
+
+font-weight:bold;
+
+font-size:20px;
+
+transition:.4s;
+
+box-shadow:0 15px 25px rgba(0,0,0,.25);
+
+}
+
+.boton:hover{
+
+transform:translateY(-8px);
+
+background:#dfffe8;
+
+}
+/*======================*/
+/* ANIMACIONES */
+/*======================*/
+
+@keyframes entrada{
+
+0%{
+
+opacity:0;
+transform:translateY(60px);
+
+}
+
+100%{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes flotar{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-18px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+/*======================*/
+/* SECCIÓN PRINCIPAL */
+/*======================*/
+
+.principal{
+
+padding:120px 8%;
+
+background:linear-gradient(to bottom,#ffffff,#eefdf3);
+
+min-height:100vh;
+
+}
+
+.titulo{
+
+text-align:center;
+
+margin-bottom:70px;
+
+}
+
+.titulo h2{
+
+font-size:50px;
+
+color:#0c6b35;
+
+font-weight:800;
+
+}
+
+.linea{
+
+width:130px;
+
+height:6px;
+
+background:#1db954;
+
+margin:18px auto;
+
+border-radius:20px;
+
+}
+
+.subtitulo{
+
+font-size:20px;
+
+color:#555;
+
+margin-top:20px;
+
+}
+
+/*======================*/
+/* IMAGEN */
+/*======================*/
+
+.contenedor-imagen{
+
+display:flex;
+
+justify-content:center;
+
+margin-bottom:70px;
+
+}
+
+.imagen{
+
+width:900px;
+
+max-width:100%;
+
+height:480px;
+
+border-radius:30px;
+
+background:linear-gradient(135deg,#d8f7df,#ffffff);
+
+border:4px dashed #2ba84a;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:30px;
+
+font-size:30px;
+
+font-weight:700;
+
+color:#0c6b35;
+
+box-shadow:0 20px 45px rgba(0,0,0,.15);
+
+transition:.5s;
+
+}
+
+.imagen:hover{
+
+transform:scale(1.02);
+
+box-shadow:0 30px 60px rgba(0,0,0,.22);
+
+}
+
+/*======================*/
+/* MENSAJE */
+/*======================*/
+
+.mensaje{
+
+max-width:950px;
+
+margin:0 auto 90px;
+
+background:white;
+
+padding:45px;
+
+border-radius:25px;
+
+box-shadow:0 20px 40px rgba(0,0,0,.12);
+
+text-align:center;
+
+border-left:10px solid #1db954;
+
+}
+
+.mensaje i{
+
+font-size:55px;
+
+color:#159548;
+
+margin-bottom:20px;
+
+animation:flotar 3s infinite;
+
+}
+
+.mensaje h3{
+
+font-size:34px;
+
+color:#0c6b35;
+
+margin-bottom:20px;
+
+}
+
+.mensaje p{
+
+font-size:20px;
+
+line-height:1.9;
+
+color:#555;
+
+}
+/*======================*/
+/* TARJETAS */
+/*======================*/
+
+.tarjetas{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+gap:30px;
+
+margin-top:40px;
+
+}
+
+.card{
+
+background:white;
+
+border-radius:25px;
+
+padding:35px 25px;
+
+text-align:center;
+
+box-shadow:0 15px 30px rgba(0,0,0,.12);
+
+transition:.4s;
+
+color:#333;
+
+border-top:6px solid #19a84a;
+
+}
+
+.card:hover{
+
+transform:translateY(-12px);
+
+box-shadow:0 25px 45px rgba(0,0,0,.2);
+
+background:#f7fff9;
+
+}
+
+.card i{
+
+font-size:55px;
+
+color:#159548;
+
+margin-bottom:20px;
+
+}
+
+.card h3{
+
+font-size:28px;
+
+color:#0c6b35;
+
+margin-bottom:15px;
+
+}
+
+.card p{
+
+font-size:17px;
+
+line-height:1.6;
+
+}
+
+/*======================*/
+/* FOOTER */
+/*======================*/
+
+footer{
+
+background:#0d5d2d;
+
+padding:40px;
+
+text-align:center;
+
+color:white;
+
+margin-top:90px;
+
+}
+
+footer h3{
+
+font-size:28px;
+
+margin-bottom:10px;
+
+}
+
+footer p{
+
+opacity:.9;
+
+}
+
+/*======================*/
+/* RESPONSIVE */
+/*======================*/
+
+@media(max-width:900px){
+
+nav{
+
+flex-direction:column;
+
+height:auto;
+
+padding:20px 0;
+
+}
+
+nav ul{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+margin-top:15px;
+
+gap:18px;
+
+}
+
+.hero-box{
+
+width:90%;
+
+padding:40px 25px;
+
+}
+
+.hero-box h1{
+
+font-size:52px;
+
+}
+
+.hero-box h3{
+
+font-size:22px;
+
+}
+
+.hero-box p{
+
+font-size:18px;
+
+}
+
+.titulo h2{
+
+font-size:38px;
+
+}
+
+.imagen{
+
+height:300px;
+
+font-size:22px;
+
+}
+
+.mensaje{
+
+padding:30px;
+
+}
+
+.mensaje h3{
+
+font-size:28px;
+
+}
+
+.mensaje p{
+
+font-size:18px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<div class="logo">
+
+<i class="fa-solid fa-school"></i>
+
+<h2>Unidad Educativa</h2>
+
+</div>
+
+<ul>
+
+<li><a href="#inicio">INICIO</a></li>
+
+<li><a href="#principal">COLEGIO</a></li>
+
+<li><a href="Colegio.html">UNIDAD EDUCATIVA</a></li>
+
+<li><a href="panel informativo.html">PANEL INFORMATIVO</a></li>
+
+<li><a href="Actividades.html">ACTIVIDADES</a></li>
+
+<li><a href="consultas a padres.html">CONSULTAS A PROFESORES</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+<!--======================-->
+<!-- BIENVENIDA -->
+<!--======================-->
+
+<section class="hero" id="inicio">
+
+<div class="hero-box">
+
+<h3>WILHELM CONDORI Y DANIEL CHOQUE LES DAMOS LA BIENVENIDA A:</h3>
+
+<h1>U.E. LA PRIMERA</h1>
+
+<p>
+
+"Formando estudiantes con valores, disciplina, responsabilidad y excelencia académica para construir un mejor futuro."
+
+</p>
+
+<a href="#principal" class="boton">
+
+Conocer Más <i class="fa-solid fa-arrow-down"></i>
+
+</a>
+
+</div>
+
+</section>
+
+<!--======================-->
+<!-- PÁGINA PRINCIPAL -->
+<!--======================-->
+
+<section class="principal" id="principal">
+
+<div class="titulo">
+
+<h2>NUESTRA INSTITUCIÓN</h2>
+
+<div class="linea"></div>
+
+<p class="subtitulo">
+
+Comprometidos con la formación integral de nuestros estudiantes.
+
+</p>
+
+</div>
+
+<div class="contenedor-imagen">
+
+<div class="imagen">
+
+<!-- CAMBIA ESTA PARTE POR TU FOTO -->
+
+<img src="colegio hd.avif" alt="Imagen del Colegio"
+style="width:100%;height:100%;object-fit:cover;border-radius:25px;">
+
+<!--
+Si todavía no tienes una imagen, elimina la línea de arriba
+y escribe aquí:
+AQUÍ VA LA FOTO DEL COLEGIO
+-->
+
+</div>
+
+</div>
+
+<div class="mensaje">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+<h3>MENSAJE INSTITUCIONAL</h3>
+
+<p>
+
+Nuestra Unidad Educativa tiene como misión brindar una educación de calidad basada en valores, respeto, disciplina, innovación y compromiso, formando jóvenes capaces de enfrentar los desafíos del futuro y contribuir positivamente a la sociedad.
+
+</p>
+
+</div>
+
+<div class="tarjetas">
+
+<a href="Colegio.html" class="card">
+
+<i class="fa-solid fa-book"></i>
+
+<h3>UNIDAD EDUCATIVA</h3>
+
+<p>
+
+Conoce nuestras misiones y visiones en nuetros estudiantes.
+
+</p>
+
+</a>
+
+<a href="panel informativo.html" class="card">
+
+<i class="fa-solid fa-chalkboard-user"></i>
+
+<h3>PANEL INFORMATIVO</h3>
+
+<p>
+
+Descubra todo acerca de nuestro colegio.
+
+</p>
+
+</a>
+
+<a href="Actividades.html" class="card">
+
+<i class="fa-solid fa-images"></i>
+
+<h3>ACTIVIDADES</h3>
+
+<p>
+
+Te invitamos a descubrir las actividades que nuestra Unidad Educativa ha realizado.
+
+</p>
+
+</a>
+
+<a href="consultas a padres.html" class="card">
+
+<i class="fa-solid fa-phone-volume"></i>
+
+<h3>CONSULTAS A PROFESORES</h3>
+
+<p>
+
+Haga un seguimiento de su hijo consoltando a nuestros docentes.
+
+</p>
+
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>U.E. LA PRIMERA</h3>
+
+<p>
+
+"Educar con valores, construir el futuro."
+
+</p>
+
+<br>
+
+<p>
+
+© 2026 Todos los derechos reservados.
+
+</p>
+
+</footer>
+
+</body>
+
+</html>
