@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Centro de Consultas | Unidad Educativa</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+
+}
+
+body{
+
+background:linear-gradient(180deg,#eefcf1,#ffffff);
+
+overflow-x:hidden;
+
+color:#333;
+
+}
+
+/*========================*/
+/* NAVBAR */
+/*========================*/
+
+header{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:80px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:rgba(11,96,45,.92);
+
+backdrop-filter:blur(18px);
+
+z-index:1000;
+
+box-shadow:0 5px 20px rgba(0,0,0,.20);
+
+}
+
+nav{
+
+width:90%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+color:white;
+
+}
+
+.logo i{
+
+font-size:34px;
+
+color:#b8ffd0;
+
+}
+
+.logo h2{
+
+font-size:30px;
+
+font-weight:700;
+
+}
+
+nav ul{
+
+display:flex;
+
+gap:28px;
+
+list-style:none;
+
+}
+
+nav ul li a{
+
+color:white;
+
+text-decoration:none;
+
+font-weight:500;
+
+transition:.3s;
+
+}
+
+nav ul li a:hover{
+
+color:#b8ffd0;
+
+}
+
+/*========================*/
+/* HERO */
+/*========================*/
+
+.hero{
+
+height:55vh;
+
+background:
+
+linear-gradient(135deg,
+
+#0b6a34,
+
+#169548,
+
+#48d277);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:450px;
+
+height:450px;
+
+background:rgba(255,255,255,.08);
+
+border-radius:50%;
+
+left:-120px;
+
+top:-120px;
+
+}
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+width:320px;
+
+height:320px;
+
+background:rgba(255,255,255,.12);
+
+border-radius:50%;
+
+right:-80px;
+
+bottom:-90px;
+
+}
+
+.hero-box{
+
+position:relative;
+
+z-index:2;
+
+width:85%;
+
+max-width:850px;
+
+padding:45px;
+
+background:rgba(255,255,255,.18);
+
+backdrop-filter:blur(18px);
+
+border-radius:30px;
+
+border:1px solid rgba(255,255,255,.35);
+
+text-align:center;
+
+box-shadow:0 20px 45px rgba(0,0,0,.25);
+
+animation:entrada 1s;
+
+}
+
+.hero-box h1{
+
+font-size:55px;
+
+color:white;
+
+margin-bottom:15px;
+
+}
+
+.hero-box p{
+
+font-size:22px;
+
+color:white;
+
+line-height:1.8;
+
+}
+
+/*========================*/
+/* CONTENEDOR */
+/*========================*/
+
+.contenedor{
+
+width:90%;
+
+max-width:1300px;
+
+margin:auto;
+
+padding:80px 0;
+
+}
+
+.titulo{
+
+text-align:center;
+
+margin-bottom:60px;
+
+}
+
+.titulo h2{
+
+font-size:42px;
+
+color:#0b6a34;
+
+}
+
+.linea{
+
+width:120px;
+
+height:5px;
+
+background:#18b852;
+
+margin:18px auto;
+
+border-radius:20px;
+
+}
+/*========================*/
+/* FORMULARIO */
+/*========================*/
+
+.formulario{
+
+background:white;
+
+padding:45px;
+
+border-radius:30px;
+
+box-shadow:0 20px 45px rgba(0,0,0,.12);
+
+margin-bottom:70px;
+
+}
+
+.form-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:25px;
+
+}
+
+.campo{
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.campo label{
+
+font-size:17px;
+
+font-weight:600;
+
+color:#0b6a34;
+
+margin-bottom:10px;
+
+}
+
+.campo input,
+.campo select,
+.campo textarea{
+
+padding:16px;
+
+border:2px solid #d8eedd;
+
+border-radius:15px;
+
+font-size:16px;
+
+outline:none;
+
+transition:.3s;
+
+background:#fcfffd;
+
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus{
+
+border-color:#1db954;
+
+box-shadow:0 0 15px rgba(29,185,84,.25);
+
+}
+
+.campo textarea{
+
+resize:none;
+
+height:130px;
+
+}
+
+.boton-centro{
+
+text-align:center;
+
+margin-top:40px;
+
+}
+
+.buscar{
+
+background:linear-gradient(90deg,#0b6a34,#20c15a);
+
+color:white;
+
+border:none;
+
+padding:18px 45px;
+
+font-size:18px;
+
+font-weight:600;
+
+border-radius:50px;
+
+cursor:pointer;
+
+transition:.35s;
+
+box-shadow:0 15px 30px rgba(0,0,0,.18);
+
+}
+
+.buscar:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 25px 45px rgba(0,0,0,.25);
+
+}
+
+/*========================*/
+/* RESULTADOS */
+/*========================*/
+
+.resultados{
+
+display:none;
+
+margin-top:60px;
+
+}
+
+.resultados h2{
+
+text-align:center;
+
+font-size:38px;
+
+color:#0b6a34;
+
+margin-bottom:15px;
+
+}
+
+.resultados p{
+
+text-align:center;
+
+font-size:18px;
+
+color:#666;
+
+margin-bottom:45px;
+
+}
+
+.profesores{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+gap:30px;
+
+}
+
+/*========================*/
+/* TARJETAS */
+/*========================*/
+
+.profesor{
+
+background:white;
+
+border-radius:25px;
+
+padding:30px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+transition:.35s;
+
+text-align:center;
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+.profesor:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 25px 50px rgba(0,0,0,.20);
+
+}
+
+.profesor::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:8px;
+
+background:linear-gradient(90deg,#0b6a34,#20c15a);
+
+}
+
+.foto{
+
+width:130px;
+
+height:130px;
+
+margin:auto;
+
+border-radius:50%;
+
+border:5px solid #20c15a;
+
+overflow:hidden;
+
+background:#eaf9ef;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:50px;
+
+color:#0b6a34;
+
+margin-bottom:20px;
+
+}
+
+.profesor h3{
+
+color:#0b6a34;
+
+font-size:28px;
+
+margin-bottom:10px;
+
+}
+
+.profesor h4{
+
+color:#1db954;
+
+font-size:18px;
+
+margin-bottom:20px;
+
+}
+
+.info{
+
+text-align:left;
+
+margin-top:20px;
+
+}
+
+.info p{
+
+margin:10px 0;
+
+font-size:16px;
+
+color:#555;
+
+}
+/*========================*/
+/* RESPONSIVE */
+/*========================*/
+
+@media(max-width:768px){
+
+.hero-box h1{
+
+font-size:40px;
+
+}
+
+.hero-box p{
+
+font-size:18px;
+
+}
+
+nav{
+
+flex-direction:column;
+
+height:auto;
+
+padding:15px;
+
+}
+
+nav ul{
+
+margin-top:15px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:15px;
+
+}
+
+.formulario{
+
+padding:25px;
+
+}
+
+}
+/*========================*/
+/* MODAL */
+/*========================*/
+
+.modal{
+
+display:none;
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.55);
+
+justify-content:center;
+
+align-items:center;
+
+z-index:9999;
+
+}
+
+.modal-box{
+
+background:white;
+
+width:90%;
+
+max-width:550px;
+
+padding:40px;
+
+border-radius:25px;
+
+text-align:center;
+
+box-shadow:0 25px 60px rgba(0,0,0,.25);
+
+animation:entrada .4s;
+
+}
+
+.icono-modal{
+
+font-size:70px;
+
+color:#20c15a;
+
+margin-bottom:20px;
+
+}
+
+.modal-box h2{
+
+color:#0b6a34;
+
+margin-bottom:15px;
+
+}
+
+.modal-box h3{
+
+margin:20px 0;
+
+color:#159548;
+
+}
+
+.detalle{
+
+background:#eefcf1;
+
+padding:20px;
+
+border-radius:15px;
+
+margin:20px 0;
+
+}
+@keyframes entrada{
+
+from{
+
+opacity:0;
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<div class="logo">
+
+<i class="fa-solid fa-school"></i>
+
+<h2>Unidad Educativa</h2>
+
+</div>
+
+<ul>
+
+<li><a href="index.html">INICIO</a></li>
+
+<li><a href="Colegio.html">UNIDAD EDUCATIVA</a></li>
+
+<li><a href="panel informativo.html">PANEL INFORMATIVO</a></li>
+
+<li><a href="Actividades.html">ACTIVIDADES</a></li>
+
+<li><a href="consultas a padres.html">CONSULTAS A PROFESORES</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-box">
+
+<h1>CENTRO DE CONSULTAS</h1>
+
+<p>
+
+Complete el siguiente formulario para encontrar al docente indicado y solicitar una consulta sobre el rendimiento académico, comportamiento o cualquier inquietud relacionada con el estudiante.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="contenedor">
+
+<div class="titulo">
+
+<h2>Formulario de Consulta</h2>
+
+<div class="linea"></div>
+
+</div>
+
+<div class="formulario">
+
+<div class="form-grid">
+
+<div class="campo">
+
+<label>Nombre del Padre o Madre</label>
+
+<input type="text" placeholder="Ingrese su nombre completo">
+
+</div>
+
+<div class="campo">
+
+<label>Nombre del Estudiante</label>
+
+<input type="text" placeholder="Nombre del estudiante">
+
+</div>
+
+<div class="campo">
+
+<label>Curso</label>
+
+<select>
+
+<option>Seleccione...</option>
+
+<option>1° Primaria</option>
+<option>2° Primaria</option>
+<option>3° Primaria</option>
+<option>4° Primaria</option>
+<option>5° Primaria</option>
+<option>6° Primaria</option>
+
+<option>1° Secundaria</option>
+<option>2° Secundaria</option>
+<option>3° Secundaria</option>
+<option>4° Secundaria</option>
+<option>5° Secundaria</option>
+<option>6° Secundaria</option>
+
+</select>
+
+</div>
+
+<div class="campo">
+
+<label>Materia</label>
+
+<select id="materia">
+
+<option value="">Seleccione una materia...</option>
+
+<option value="matematicas">Matemáticas</option>
+
+<option value="lenguaje">Lenguaje</option>
+
+<option value="fisica">Física</option>
+
+<option value="quimica">Química</option>
+
+<option value="historia">Historia</option>
+
+<option value="biologia">Biología</option>
+
+<option value="informatica">Informática</option>
+
+<option value="ingles">Inglés</option>
+
+<option value="todos">Todos los docentes</option>
+
+</select>
+
+</div>
+
+<div class="campo" style="grid-column:1/-1;">
+
+<label>Motivo de la Consulta</label>
+
+<textarea placeholder="Explique brevemente el motivo de su consulta..."></textarea>
+
+</div>
+
+</div>
+
+<div class="boton-centro">
+
+<button class="buscar" onclick="buscarProfesor()">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+Buscar Profesor
+
+</button>
+
+</div>
+
+</div>
+<!--====================================-->
+<!-- RESULTADOS -->
+<!--====================================-->
+
+<div class="resultados" id="resultados">
+
+<h2>Profesores Disponibles</h2>
+
+<p>
+
+Seleccione al docente con quien desea realizar la consulta.
+
+</p>
+
+<div class="profesores">
+
+<!--====================================-->
+<!-- PROFESOR 1 -->
+<!--====================================-->
+
+<div class="profesor matematicas todos">
+
+<div class="foto">
+
+<!-- Reemplaza este icono por una imagen si deseas -->
+<i class="fa-solid fa-user-tie"></i>
+
+<!--
+También puedes usar:
+
+<img src="imagenes/profesor1.jpg"
+style="width:100%;height:100%;object-fit:cover;">
+
+-->
+
+</div>
+
+<h3>Lic. Juan Pérez</h3>
+
+<h4>Profesor de Matemáticas</h4>
+
+<div class="info">
+
+<p><i class="fa-solid fa-book"></i> Área: Matemáticas</p>
+
+<p><i class="fa-solid fa-clock"></i> Atención:
+Lunes y Miércoles
+14:00 - 16:00</p>
+
+<p><i class="fa-solid fa-envelope"></i>
+jperez@colegio.edu.bo</p>
+
+<p><i class="fa-solid fa-phone"></i>
+Interno: 101</p>
+
+</div>
+
+<div class="boton-centro">
+
+<button class="buscar"
+onclick="solicitar('Lic. Juan Pérez')">
+
+Solicitar Consulta
+
+</button>
+
+</div>
+
+</div>
+
+<!--====================================-->
+<!-- PROFESOR 2 -->
+<!--====================================-->
+
+<div class="profesor lenguaje todos">
+
+<div class="foto">
+
+<i class="fa-solid fa-user-tie"></i>
+
+</div>
+
+<h3>Lic. María Fernández</h3>
+
+<h4>Profesora de Lenguaje</h4>
+
+<div class="info">
+
+<p><i class="fa-solid fa-book"></i> Área: Lenguaje</p>
+
+<p><i class="fa-solid fa-clock"></i>
+Martes y Viernes
+15:00 - 17:00</p>
+
+<p><i class="fa-solid fa-envelope"></i>
+mfernandez@colegio.edu.bo</p>
+
+<p><i class="fa-solid fa-phone"></i>
+Interno: 102</p>
+
+</div>
+
+<div class="boton-centro">
+
+<button class="buscar"
+onclick="solicitar('Lic. María Fernández')">
+
+Solicitar Consulta
+
+</button>
+
+</div>
+
+</div>
+
+<!--====================================-->
+<!-- PROFESOR 3 -->
+<!--====================================-->
+
+<div class="profesor fisica todos">
+
+<div class="foto">
+
+<i class="fa-solid fa-user-tie"></i>
+
+</div>
+
+<h3>Lic. Carlos Rojas</h3>
+
+<h4>Profesor de Física</h4>
+
+<div class="info">
+
+<p><i class="fa-solid fa-book"></i> Área: Física</p>
+
+<p><i class="fa-solid fa-clock"></i>
+Lunes a Viernes
+08:00 - 10:00</p>
+
+<p><i class="fa-solid fa-envelope"></i>
+crojas@colegio.edu.bo</p>
+
+<p><i class="fa-solid fa-phone"></i>
+Interno: 103</p>
+
+</div>
+
+<div class="boton-centro">
+
+<button class="buscar"
+onclick="solicitar('Lic. Carlos Rojas')">
+
+Solicitar Consulta
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<!--====================================-->
+<!-- PROFESOR 4 -->
+<!--====================================-->
+
+<div class="profesor quimica todos">
+
+<div class="foto">
+
+<i class="fa-solid fa-user-tie"></i>
+
+</div>
+
+<h3>Lic. Ana Morales</h3>
+
+<h4>Profesora de Química</h4>
+
+<div class="info">
+
+<p><i class="fa-solid fa-book"></i> Área: Química</p>
+
+<p><i class="fa-solid fa-clock"></i> Martes y Jueves<br>14:00 - 16:00</p>
+
+<p><i class="fa-solid fa-envelope"></i> amorales@colegio.edu.bo</p>
+
+<p><i class="fa-solid fa-phone"></i> Interno: 104</p>
+
+</div>
+
+<div class="boton-centro">
+
+<button class="buscar" onclick="solicitar('Lic. Ana Morales')">
+
+Solicitar Consulta
+
+</button>
+
+</div>
+
+</div>
+
+<!--====================================-->
+<!-- PROFESOR 5 -->
+<!--====================================-->
+
+<div class="profesor historia todos">
+
+<div class="foto">
+
+<i class="fa-solid fa-user-tie"></i>
+
+</div>
+
+<h3>Lic. Roberto Flores</h3>
+
+<h4>Profesor de Historia</h4>
+
+<div class="info">
+
+<p><i class="fa-solid fa-book"></i> Área: Historia</p>
+
+<p><i class="fa-solid fa-clock"></i> Lunes y Viernes<br>13:30 - 15:30</p>
+
+<p><i class="fa-solid fa-envelope"></i> rflores@colegio.edu.bo</p>
+
+<p><i class="fa-solid fa-phone"></i> Interno: 105</p>
+
+</div>
+
+<div class="boton-centro">
+
+<button class="buscar" onclick="solicitar('Lic. Roberto Flores')">
+
+Solicitar Consulta
+
+</button>
+
+</div>
+
+</div>
+
+<!--====================================-->
+<!-- PROFESOR 6 -->
+<!--====================================-->
+
+<div class="profesor biologia todos">
+
+<div class="foto">
+
+<i class="fa-solid fa-user-tie"></i>
+
+</div>
+
+<h3>Lic. Patricia Gómez</h3>
+
+<h4>Profesora de Biología</h4>
+
+<div class="info">
+
+<p><i class="fa-solid fa-book"></i> Área: Biología</p>
+
+<p><i class="fa-solid fa-clock"></i> Miércoles y Viernes<br>09:00 - 11:00</p>
+
+<p><i class="fa-solid fa-envelope"></i> pgomez@colegio.edu.bo</p>
+
+<p><i class="fa-solid fa-phone"></i> Interno: 106</p>
+
+</div>
+
+<div class="boton-centro">
+
+<button class="buscar" onclick="solicitar('Lic. Patricia Gómez')">
+
+Solicitar Consulta
+
+</button>
+
+</div>
+
+</div>
+
+<!--====================================-->
+<!-- PROFESOR 7 -->
+<!--====================================-->
+
+<div class="profesor informatica todos">
+
+<div class="foto">
+
+<i class="fa-solid fa-user-tie"></i>
+
+</div>
+
+<h3>Ing. Diego Vargas</h3>
+
+<h4>Profesor de Informática</h4>
+
+<div class="info">
+
+<p><i class="fa-solid fa-book"></i> Área: Informática</p>
+
+<p><i class="fa-solid fa-clock"></i> Lunes a Jueves<br>15:00 - 17:00</p>
+
+<p><i class="fa-solid fa-envelope"></i> dvargas@colegio.edu.bo</p>
+
+<p><i class="fa-solid fa-phone"></i> Interno: 107</p>
+
+</div>
+
+<div class="boton-centro">
+
+<button class="buscar" onclick="solicitar('Ing. Diego Vargas')">
+
+Solicitar Consulta
+
+</button>
+
+</div>
+
+</div>
+
+<!--====================================-->
+<!-- PROFESOR 8 -->
+<!--====================================-->
+
+<div class="profesor ingles todos">
+
+<div class="foto">
+
+<i class="fa-solid fa-user-tie"></i>
+
+</div>
+
+<h3>Lic. Sofía Herrera</h3>
+
+<h4>Profesora de Inglés</h4>
+
+<div class="info">
+
+<p><i class="fa-solid fa-book"></i> Área: Inglés</p>
+
+<p><i class="fa-solid fa-clock"></i> Martes y Jueves<br>10:00 - 12:00</p>
+
+<p><i class="fa-solid fa-envelope"></i> sherrera@colegio.edu.bo</p>
+
+<p><i class="fa-solid fa-phone"></i> Interno: 108</p>
+
+</div>
+
+<div class="boton-centro">
+
+<button class="buscar" onclick="solicitar('Lic. Sofía Herrera')">
+
+Solicitar Consulta
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<!--====================================-->
+<!-- MODAL DE CONFIRMACIÓN -->
+<!--====================================-->
+
+<div class="modal" id="modalConsulta">
+
+    <div class="modal-box">
+
+        <div class="icono-modal">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+        </div>
+
+        <h2>Solicitud Registrada</h2>
+
+        <p>
+
+            Su solicitud de consulta ha sido registrada correctamente.
+
+        </p>
+
+        <br>
+
+        <h3 id="nombreProfesor">
+
+            Profesor:
+
+        </h3>
+
+        <div class="detalle">
+
+            <p>
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                La institución se comunicará con usted para confirmar
+                la fecha y hora de atención.
+
+            </p>
+
+        </div>
+
+        <button class="buscar"
+
+        onclick="cerrarModal()">
+
+        Aceptar
+
+        </button>
+
+    </div>
+
+</div>
+
+<footer>
+
+<p>
+
+© 2026 Unidad Educativa
+
+<br>
+
+Centro de Consultas para Padres de Familia
+
+</p>
+
+</footer>
+
+<script>
+
+/*============================*/
+/* MOSTRAR PROFESORES */
+/*============================*/
+
+function buscarProfesor(){
+
+const materia=document.getElementById("materia").value;
+
+const resultado=document.getElementById("resultados");
+
+resultado.style.display="block";
+
+const profesores=document.querySelectorAll(".profesor");
+
+profesores.forEach(function(profesor){
+
+profesor.style.display="none";
+
+if(materia==="todos"){
+
+profesor.style.display="block";
+
+}
+
+else if(profesor.classList.contains(materia)){
+
+profesor.style.display="block";
+
+}
+
+});
+
+resultado.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+}
+/*====================================*/
+/* SOLICITAR CONSULTA */
+/*====================================*/
+
+function solicitar(nombre){
+
+document.getElementById("nombreProfesor").innerHTML=
+
+"<i class='fa-solid fa-user'></i> Profesor seleccionado: <br><br><b>"+nombre+"</b>";
+
+document.getElementById("modalConsulta").style.display="flex";
+
+}
+
+/*====================================*/
+/* CERRAR MODAL */
+/*====================================*/
+
+function cerrarModal(){
+
+document.getElementById("modalConsulta").style.display="none";
+
+}
+
+/*====================================*/
+/* CERRAR SI HACE CLIC FUERA */
+/*====================================*/
+
+window.onclick=function(event){
+
+const modal=document.getElementById("modalConsulta");
+
+if(event.target==modal){
+
+modal.style.display="none";
+
+}
+
+}
+
+/*====================================*/
+/* EFECTO AL CARGAR */
+/*====================================*/
+
+window.onload=function(){
+
+document.querySelector(".hero-box").style.animation="entrada 1s";
+
+}
+
+/*====================================*/
+/* MENSAJE EN CONSOLA */
+/*====================================*/
+
+console.log("Centro de Consultas cargado correctamente.");
+</script>
+
+</body>
+
+</html>

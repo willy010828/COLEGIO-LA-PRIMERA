@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Panel Informativo | Unidad Educativa</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+
+background:linear-gradient(180deg,#eefdf2,#ffffff);
+
+overflow-x:hidden;
+
+color:#333;
+
+}
+
+/*============================*/
+/* BARRA SUPERIOR */
+/*============================*/
+
+header{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:80px;
+
+background:rgba(10,95,45,.92);
+
+backdrop-filter:blur(15px);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:999;
+
+box-shadow:0 5px 20px rgba(0,0,0,.25);
+
+}
+
+nav{
+
+width:90%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+color:white;
+
+}
+
+.logo i{
+
+font-size:34px;
+
+color:#b9ffd2;
+
+}
+
+.logo h2{
+
+font-size:30px;
+
+font-weight:700;
+
+}
+
+nav ul{
+
+display:flex;
+
+gap:28px;
+
+list-style:none;
+
+}
+
+nav ul li a{
+
+color:white;
+
+text-decoration:none;
+
+font-weight:500;
+
+transition:.3s;
+
+}
+
+nav ul li a:hover{
+
+color:#b9ffd2;
+
+}
+
+/*============================*/
+/* PORTADA */
+/*============================*/
+
+.hero{
+
+height:55vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+position:relative;
+
+overflow:hidden;
+
+background:linear-gradient(135deg,#0d6a34,#18a64e,#4bd67c);
+
+}
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:500px;
+
+height:500px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.08);
+
+top:-150px;
+
+left:-120px;
+
+}
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+width:350px;
+
+height:350px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.12);
+
+bottom:-120px;
+
+right:-100px;
+
+}
+
+.hero-box{
+
+position:relative;
+
+z-index:2;
+
+background:rgba(255,255,255,.18);
+
+backdrop-filter:blur(18px);
+
+padding:45px;
+
+border-radius:30px;
+
+border:1px solid rgba(255,255,255,.35);
+
+box-shadow:0 20px 45px rgba(0,0,0,.20);
+
+width:85%;
+
+max-width:850px;
+
+animation:aparecer 1s;
+
+}
+
+.hero-box h1{
+
+font-size:60px;
+
+color:white;
+
+margin-bottom:15px;
+
+}
+
+.hero-box p{
+
+font-size:22px;
+
+color:white;
+
+line-height:1.8;
+
+}
+
+/*============================*/
+/* CONTENEDOR */
+/*============================*/
+
+.contenedor{
+
+width:90%;
+
+max-width:1300px;
+
+margin:auto;
+
+padding:90px 0;
+
+}
+
+.titulo{
+
+text-align:center;
+
+margin-bottom:55px;
+
+}
+
+.titulo h2{
+
+font-size:42px;
+
+color:#0d6a34;
+
+}
+
+.linea{
+
+width:120px;
+
+height:5px;
+
+background:#1db954;
+
+margin:15px auto;
+
+border-radius:20px;
+
+}
+/*============================*/
+/* TARJETAS DE COMUNICADOS */
+/*============================*/
+
+.panel{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:35px;
+
+margin-top:30px;
+
+}
+
+.tarjeta{
+
+background:white;
+
+border-radius:25px;
+
+padding:30px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+transition:.4s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.tarjeta:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 25px 45px rgba(0,0,0,.18);
+
+}
+
+.tarjeta::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:8px;
+
+background:linear-gradient(90deg,#0d6a34,#20c15a);
+
+}
+
+.icono{
+
+width:80px;
+
+height:80px;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:35px;
+
+color:white;
+
+margin-bottom:20px;
+
+}
+
+.citacion{
+
+background:#1b8f45;
+
+}
+
+.aulas{
+
+background:#2ea44f;
+
+}
+
+.comunicado{
+
+background:#0d7c8d;
+
+}
+
+.urgente{
+
+background:#d63031;
+
+}
+
+.tarjeta h3{
+
+font-size:28px;
+
+color:#0d6a34;
+
+margin-bottom:12px;
+
+}
+
+.fecha{
+
+display:inline-block;
+
+background:#e9fff0;
+
+color:#0d6a34;
+
+padding:8px 16px;
+
+border-radius:20px;
+
+font-size:14px;
+
+font-weight:600;
+
+margin-bottom:18px;
+
+}
+
+.tarjeta p{
+
+font-size:17px;
+
+line-height:1.8;
+
+color:#555;
+
+margin-bottom:25px;
+
+}
+
+.boton{
+
+display:inline-block;
+
+padding:12px 28px;
+
+border-radius:40px;
+
+background:linear-gradient(90deg,#0d6a34,#1db954);
+
+color:white;
+
+font-weight:600;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+.boton:hover{
+
+transform:scale(1.06);
+
+box-shadow:0 10px 20px rgba(0,0,0,.18);
+
+}
+
+/*============================*/
+/* MODAL */
+/*============================*/
+
+.modal{
+
+display:none;
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.55);
+
+justify-content:center;
+
+align-items:center;
+
+z-index:9999;
+
+}
+
+.modal-contenido{
+
+background:white;
+
+width:90%;
+
+max-width:700px;
+
+border-radius:25px;
+
+padding:40px;
+
+animation:aparecer .4s;
+
+box-shadow:0 20px 50px rgba(0,0,0,.25);
+
+}
+
+.modal-contenido h2{
+
+color:#0d6a34;
+
+margin-bottom:20px;
+
+}
+
+.modal-contenido p{
+
+line-height:1.9;
+
+font-size:18px;
+
+color:#555;
+
+}
+
+.cerrar{
+
+float:right;
+
+font-size:35px;
+
+cursor:pointer;
+
+color:#0d6a34;
+
+transition:.3s;
+
+}
+
+.cerrar:hover{
+
+transform:rotate(90deg);
+
+}
+
+@keyframes aparecer{
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+/*============================*/
+/* FOOTER */
+/*============================*/
+
+footer{
+
+background:#0d6a34;
+
+color:white;
+
+text-align:center;
+
+padding:30px;
+
+margin-top:80px;
+
+}
+
+footer p{
+
+font-size:17px;
+
+}
+
+/*============================*/
+/* RESPONSIVE */
+/*============================*/
+
+@media(max-width:768px){
+
+.hero-box h1{
+
+font-size:40px;
+
+}
+
+.hero-box p{
+
+font-size:18px;
+
+}
+
+nav{
+
+flex-direction:column;
+
+height:auto;
+
+padding:15px;
+
+}
+
+nav ul{
+
+margin-top:15px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:15px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<div class="logo">
+
+<i class="fa-solid fa-school"></i>
+
+<h2>Unidad Educativa</h2>
+
+</div>
+
+<ul>
+
+<li><a href="index.html">INICIO</a></li>
+
+<li><a href="Colegio.html">UNIDAD EDUCATIVA</a></li>
+
+<li><a href="panel informativo.html">PANEL INFORMATIVO</a></li>
+
+<li><a href="Actividades.html">ACTIVIDADES</a></li>
+
+<li><a href="consultas a padres.html">CONSULTA A PROFESORES</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-box">
+
+<h1>PANEL INFORMATIVO</h1>
+
+<p>
+
+Aquí encontrarás todos los comunicados oficiales de nuestra Unidad Educativa.
+Mantente informado sobre reuniones, actividades, avisos y anuncios importantes.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="contenedor">
+
+<div class="titulo">
+
+<h2>Comunicados Institucionales</h2>
+
+<div class="linea"></div>
+
+</div>
+
+<div class="panel">
+
+<!-- TARJETA 1 -->
+
+<div class="tarjeta">
+
+<div class="icono citacion">
+
+<i class="fa-solid fa-users"></i>
+
+</div>
+
+<span class="fecha">
+
+📅 15 de Julio de 2026
+
+</span>
+
+<h3>Citación a Padres</h3>
+
+<p>
+
+Se convoca a los padres y madres de familia a una reunión
+informativa para tratar temas académicos y disciplinarios.
+
+</p>
+
+<a href="#" class="boton"
+onclick="abrirModal('modal1')">
+
+Leer más
+
+</a>
+
+</div>
+
+<!-- TARJETA 2 -->
+
+<div class="tarjeta">
+
+<div class="icono aulas">
+
+<i class="fa-solid fa-school"></i>
+
+</div>
+
+<span class="fecha">
+
+📅 20 de Julio de 2026
+
+</span>
+
+<h3>Aulas Abiertas</h3>
+
+<p>
+
+Los estudiantes presentarán sus proyectos y trabajos
+realizados durante el semestre.
+
+</p>
+
+<a href="#" class="boton"
+onclick="abrirModal('modal2')">
+
+Leer más
+
+</a>
+
+</div>
+
+<!-- TARJETA 3 -->
+
+<div class="tarjeta">
+
+<div class="icono comunicado">
+
+<i class="fa-solid fa-bullhorn"></i>
+
+</div>
+
+<span class="fecha">
+
+📅 25 de Julio de 2026
+
+</span>
+
+<h3>Comunicado General</h3>
+
+<p>
+
+Se informa a toda la comunidad educativa sobre el cambio
+de horario correspondiente a la próxima semana.
+
+</p>
+
+<a href="#" class="boton"
+onclick="abrirModal('modal3')">
+
+Leer más
+
+</a>
+
+</div>
+
+<!-- TARJETA 4 -->
+
+<div class="tarjeta">
+
+<div class="icono urgente">
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+</div>
+
+<span class="fecha">
+
+URGENTE
+
+</span>
+
+<h3>Aviso Importante</h3>
+
+<p>
+
+Recordamos el uso obligatorio del uniforme institucional
+durante todas las actividades oficiales.
+
+</p>
+
+<a href="#" class="boton"
+onclick="abrirModal('modal4')">
+
+Leer más
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+<!--============================-->
+<!-- MODAL 1 -->
+<!--============================-->
+
+<div class="modal" id="modal1">
+
+<div class="modal-contenido">
+
+<span class="cerrar" onclick="cerrarModal('modal1')">&times;</span>
+
+<h2>📢 Citación a Padres de Familia</h2>
+
+<p>
+
+La Dirección de la Unidad Educativa convoca a todos los padres y madres de familia
+a una reunión general que se realizará el día <b>15 de julio de 2026</b> a horas
+<b>18:30</b> en el salón principal.
+
+<br><br>
+
+En esta reunión se tratarán temas relacionados con:
+
+<br><br>
+
+✔ Rendimiento académico.<br>
+✔ Conducta y disciplina.<br>
+✔ Actividades institucionales.<br>
+✔ Organización del siguiente trimestre.
+
+</p>
+
+</div>
+
+</div>
+
+<!--============================-->
+<!-- MODAL 2 -->
+<!--============================-->
+
+<div class="modal" id="modal2">
+
+<div class="modal-contenido">
+
+<span class="cerrar" onclick="cerrarModal('modal2')">&times;</span>
+
+<h2>🏫 Aulas Abiertas</h2>
+
+<p>
+
+Se invita cordialmente a todos los padres de familia a participar de la actividad
+<b>"Aulas Abiertas"</b>, donde podrán observar los trabajos, proyectos y exposiciones
+realizadas por los estudiantes.
+
+<br><br>
+
+📅 Fecha: 20 de julio de 2026.<br>
+🕗 Hora: 08:00 a 12:00.<br>
+📍 Lugar: Instalaciones de la Unidad Educativa.
+
+</p>
+
+</div>
+
+</div>
+
+<!--============================-->
+<!-- MODAL 3 -->
+<!--============================-->
+
+<div class="modal" id="modal3">
+
+<div class="modal-contenido">
+
+<span class="cerrar" onclick="cerrarModal('modal3')">&times;</span>
+
+<h2>📌 Comunicado General</h2>
+
+<p>
+
+La Dirección informa que, debido a actividades institucionales, el horario de ingreso
+y salida será modificado durante la próxima semana.
+
+<br><br>
+
+Se recomienda revisar diariamente este panel para mantenerse informado sobre cualquier
+nuevo comunicado oficial.
+
+</p>
+
+</div>
+
+</div>
+
+<!--============================-->
+<!-- MODAL 4 -->
+<!--============================-->
+
+<div class="modal" id="modal4">
+
+<div class="modal-contenido">
+
+<span class="cerrar" onclick="cerrarModal('modal4')">&times;</span>
+
+<h2>⚠ Aviso Importante</h2>
+
+<p>
+
+Se recuerda a toda la comunidad educativa que el uso del uniforme oficial es obligatorio
+durante clases, actos cívicos y actividades institucionales.
+
+<br><br>
+
+Asimismo, se solicita puntualidad y el cumplimiento del reglamento interno del colegio.
+
+</p>
+
+</div>
+
+</div>
+
+<footer>
+
+<p>
+
+© 2026 Unidad Educativa La Primera • Panel Informativo
+
+</p>
+
+</footer>
+
+<script>
+
+function abrirModal(id){
+
+document.getElementById(id).style.display="flex";
+
+}
+
+function cerrarModal(id){
+
+document.getElementById(id).style.display="none";
+
+}
+
+window.onclick=function(event){
+
+let modales=document.getElementsByClassName("modal");
+
+for(let i=0;i<modales.length;i++){
+
+if(event.target==modales[i]){
+
+modales[i].style.display="none";
+
+}
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
